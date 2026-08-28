@@ -1,0 +1,29 @@
+<div class="layout layout--row gap">
+  <div class="columns" data-overflow-max-cols="3">
+    <div class="column">
+      {% for item in rss.channel.item limit: 6 %}
+        <div class="item">
+          <div class="meta">
+            <span class="index w--10">
+              {{ forloop.index }}
+            </span>
+          </div>
+          <div class="content">
+            <span class="title title--xsmall">
+              {{ item.title }}
+            </span>
+            <span class="label label--xsmall label--gray">
+              {{ item.category }}
+            </span>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<div class="title_bar">
+  <img class="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG9GM6fUtkW3JS9eH1MYgkYwyBGXlPCde1aJrcW2IP2Q&amp;s=10">
+  <span class="title">
+    {{ trmnl.plugin_settings.instance_name }}
+  </span>
+</div>

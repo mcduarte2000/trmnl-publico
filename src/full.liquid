@@ -1,0 +1,32 @@
+<div class="layout layout--col gap">
+  <div class="columns" data-overflow-max-cols="2">
+    <div class="column">
+      {% for item in rss.channel.item limit: 10 %}
+        <div class="item item--emphasis-1 gap--xsmall" data-pixel-perfect="true">
+          <div class="meta">
+            <span class="index text--small">
+              {{ forloop.index }}
+            </span>
+          </div>
+          <div class="content">
+            <span class="title title--small">
+              {{ item.title }}
+            </span>
+            <span class="label label--small label--gray">
+              {{ item.category }}
+            </span>
+            <span class="description description--xsmall">
+              {{ item.description | strip_html }}
+            </span>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<div class="title_bar">
+  <img class="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG9GM6fUtkW3JS9eH1MYgkYwyBGXlPCde1aJrcW2IP2Q&amp;s=10">
+  <span class="title">
+    {{ trmnl.plugin_settings.instance_name }}
+  </span>
+</div>
