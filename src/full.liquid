@@ -1,38 +1,7 @@
-<div class="layout layout--col gap">
-  <div class="columns" data-overflow-max-cols="2" data-overflow-max-cols-portrait="1" data-overflow-max-cols-lg="3">
-    <div class="column">
-      {% for item in rss.channel.item limit: 10 %}
-        {% assign pub_timestamp = item.pubDate | date: "%s" %}
-        {% assign now_timestamp = trmnl.system.timestamp_utc %}
-        {% assign diff_seconds = now_timestamp | minus: pub_timestamp %}
-        {% assign diff_minutes = diff_seconds | divided_by: 60 %}
-        {% assign diff_hours = diff_minutes | divided_by: 60 %}
-        {% assign diff_days = diff_hours | divided_by: 24 %}
-        {% if diff_minutes < 1 %}
-          {% assign time_ago = "Just now" %}
-        {% elsif diff_minutes < 60 %}
-          {% assign time_ago = diff_minutes | append: "m ago" %}
-        {% elsif diff_hours < 24 %}
-          {% assign time_ago = diff_hours | append: "h ago" %}
-        {% else %}
-          {% assign time_ago = diff_days | append: "d ago" %}
-        {% endif %}
-        <div class="item gap--xsmall">
-          <div class="meta">
-            <span class="index text--small">{{ forloop.index }}</span>
-          </div>
-          <div class="content">
-            <span class="title title--small" data-clamp="2">{{ item.title }}</span>
-            <span class="label label--xsmall label--gray">{{ item.category }}&nbsp;&middot;&nbsp;{{ time_ago }}</span>
-            <span class="description description--xsmall hidden lg:block" data-clamp="2">{{ item.description | strip_html }}</span>
-          </div>
-        </div>
-      {% endfor %}
-    </div>
-  </div>
+<div class="layout">
+  <span class="title">Test</span>
 </div>
 
 <div class="title_bar">
-  <img class="image" src="https://trmnl.com/images/plugins/trmnl--render.svg">
-  <span class="title">{{ trmnl.plugin_settings.instance_name }}</span>
+  <span class="title">Público</span>
 </div>
