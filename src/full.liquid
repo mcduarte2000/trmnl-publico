@@ -27,11 +27,7 @@
           </div>
           <div class="content">
             <span class="title title--small" data-clamp="2">{{ item.title }}</span>
-            <span class="label label--xsmall label--gray">
-              {{ item.category }} · 
-              <span class="lg:hidden">{{ time_ago_short }}</span>
-              <span class="hidden lg:inline">{{ time_ago_long }}</span>
-            </span>
+            <span class="label label--xsmall label--gray">{{ item.category }}&nbsp;&middot;&nbsp;<span class="lg:hidden">{{ time_ago_short }}</span><span class="hidden lg:inline">{{ time_ago_long }}</span></span>
             <span class="description description--xsmall hidden lg:block" data-clamp="2">{{ item.description | strip_html }}</span>
           </div>
         </div>
