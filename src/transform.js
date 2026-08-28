@@ -1,4 +1,4 @@
-function transform(input) {
+function run(input) {
   if (!input.rss || !input.rss.channel || !input.rss.channel.item) {
     return input;
   }
