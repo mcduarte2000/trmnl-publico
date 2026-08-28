@@ -1,7 +1,7 @@
 <div class="layout layout--col gap">
   <div class="columns" data-overflow-max-cols="2" data-overflow-max-cols-portrait="1" data-overflow-max-cols-lg="3">
     <div class="column">
-      {% for item in rss.channel.item limit: 8 %}
+      {% for item in rss.channel.item limit: 10 %}
         {% assign pub_timestamp = item.pubDate | date: "%s" %}
         {% assign now_timestamp = trmnl.system.timestamp_utc %}
         {% assign diff_seconds = now_timestamp | minus: pub_timestamp %}
