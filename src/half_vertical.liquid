@@ -3,28 +3,13 @@
     <div class="columns" data-overflow-max-cols="1">
       <div class="column">
         {% for item in rss.channel.item limit: 10 %}
-          {% assign pub_timestamp = item.pubDate | date: "%s" %}
-          {% assign now_timestamp = trmnl.system.timestamp_utc %}
-          {% assign diff_seconds = now_timestamp | minus: pub_timestamp %}
-          {% assign diff_minutes = diff_seconds | divided_by: 60 %}
-          {% assign diff_hours = diff_minutes | divided_by: 60 %}
-          {% assign diff_days = diff_hours | divided_by: 24 %}
-          {% if diff_minutes < 1 %}
-            {% assign time_ago = "Just now" %}
-          {% elsif diff_minutes < 60 %}
-            {% assign time_ago = diff_minutes | append: "m ago" %}
-          {% elsif diff_hours < 24 %}
-            {% assign time_ago = diff_hours | append: "h ago" %}
-          {% else %}
-            {% assign time_ago = diff_days | append: "d ago" %}
-          {% endif %}
           <div class="item">
             <div class="meta">
               <span class="index w--10 lg:w--12">{{ forloop.index }}</span>
             </div>
             <div class="content">
               <span class="title title--small lg:title--base">{{ item.title }}</span>
-              <span class="label label--small label--gray lg:label--base">{{ item.category }} · {{ time_ago }}</span>
+              <span class="label label--small label--gray lg:label--base">{{ item.category }} · {% render "time_ago" with date: item.pubDate %}</span>
             </div>
           </div>
         {% endfor %}
