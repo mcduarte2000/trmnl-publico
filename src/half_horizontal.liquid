@@ -9,7 +9,7 @@
             </div>
             <div class="content">
               <span class="title title--xsmall lg:title--small">{{ item.title }}</span>
-              <span class="label label--xsmall label--gray lg:label--small">{{ item.category }} · {% render "time_ago" with date: item.pubDate %}</span>
+              <span class="label label--xsmall label--gray lg:label--small">{{ item.category }} · {% render "time_ago" with published_date: item.pubDate %}</span>
             </div>
           </div>
         {% endfor %}

@@ -7,7 +7,7 @@
 {%- endcapture %}
 
 {% template time_ago %}
-{%- assign pub_timestamp = date | date: "%s" -%}
+{%- assign pub_timestamp = published_date | date: "%s" -%}
 {%- assign now_timestamp = trmnl.system.timestamp_utc -%}
 {%- assign diff_seconds = now_timestamp | minus: pub_timestamp -%}
 {%- assign diff_minutes = diff_seconds | divided_by: 60 -%}
