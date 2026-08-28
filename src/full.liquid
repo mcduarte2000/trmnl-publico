@@ -24,6 +24,7 @@
           <div class="content">
             <span class="title title--small" data-clamp="2">{{ item.title }}</span>
             <span class="label label--xsmall label--gray">{{ item.category }} · {{ time_ago }}</span>
+            <span class="description description--xsmall hidden lg:block" data-clamp="2">{{ item.description | strip_html }}</span>
           </div>
         </div>
       {% endfor %}
