@@ -5,21 +5,3 @@
   <span class="instance">{{ topic_label }}</span>
 </div>
 {%- endcapture %}
-
-{% template time_ago %}
-{%- assign pub_timestamp = published_date | date: "%s" -%}
-{%- assign now_timestamp = trmnl.system.timestamp_utc -%}
-{%- assign diff_seconds = now_timestamp | minus: pub_timestamp -%}
-{%- assign diff_minutes = diff_seconds | divided_by: 60 -%}
-{%- assign diff_hours = diff_minutes | divided_by: 60 -%}
-{%- assign diff_days = diff_hours | divided_by: 24 -%}
-{%- if diff_minutes < 1 -%}
-Just now
-{%- elsif diff_minutes < 60 -%}
-{{ diff_minutes }}m ago
-{%- elsif diff_hours < 24 -%}
-{{ diff_hours }}h ago
-{%- else -%}
-{{ diff_days }}d ago
-{%- endif -%}
-{% endtemplate %}
