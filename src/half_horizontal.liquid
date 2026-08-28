@@ -1,5 +1,5 @@
 <div class="layout layout--row gap">
-  <div class="columns" data-overflow-max-cols="3">
+  <div class="columns" data-overflow-max-cols="3" data-overflow-max-cols-lg="4">
     <div class="column">
       {% for item in rss.channel.item limit: 6 %}
         {% assign pub_timestamp = item.pubDate | date: "%s" %}
@@ -19,11 +19,11 @@
         {% endif %}
         <div class="item">
           <div class="meta">
-            <span class="index w--10">{{ forloop.index }}</span>
+            <span class="index w--10 lg:w--12">{{ forloop.index }}</span>
           </div>
           <div class="content">
-            <span class="title title--xsmall">{{ item.title }}</span>
-            <span class="label label--xsmall label--gray">{{ item.category }} · {{ time_ago }}</span>
+            <span class="title title--xsmall lg:title--small">{{ item.title }}</span>
+            <span class="label label--xsmall label--gray lg:label--small">{{ item.category }} · {{ time_ago }}</span>
           </div>
         </div>
       {% endfor %}
