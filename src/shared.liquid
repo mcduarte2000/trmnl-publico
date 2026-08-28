@@ -1,7 +1,8 @@
-{%- capture title_bar %}
-<div class="title_bar">
-  <img class="image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFcAAABcCAMAAAAs0dmdAAAAclBMVEX////SCRHQAADut7fRAATaWFn89PTSAA3NAADSAAnyxMX99/f78PD77e3YPkHwv8DgeHnSFxrYTE366OjVLC/33t7mlJXif4Dljo/YREb22Nnea2zyycncYWLppKXqqaronZ7UJCbjh4jgcnTVMzXz0NBAdrhNAAAETklEQVRYhe2Z2XKrMAyGQewhIex7ICTl/V/x2CZJbRkb0rPM6UzVm6Yjf1XkX7IMhvm2TXnkdFU5WG0WGkqTlgExTwv2AhsWm5p4LPZxwRnG2IN9oS//oLNOm1w40z8ec3sfeFkDcDnouVAufy12Bvwwj6BHMdliMuFUWOMwHowIB+zByxToxOK5VWp+unpJ79OVfn0HvKxkGxS2YwrBKjmAJuPJbjGkTzJkF8ptCgdxof9c0JuKLMGyO5xlHYjLE1FqcOG9w1wB9vwr3r+YudrR8qnE4Y5iGEqFQ424rslcYeqPblH52H0Wva9KvfgDArOMQkcykkCZ4nhRVYXqksQhsK8OJ6MHD5wT5mais1EpAw5A9ByJp2dmYxSYQWI0on4BV2qvLhyoBE+Lxcv065dGJ66TuKGmIMUvt3CLtqxLIrZ0g4sdBOdY5t6XD1hIMhcXpOAdYu5DqGGD903iqpWG1E64pAeB/1HdOmg+ULxHzLV0XEdwhHi0hyuzDOtB4moEQWTl8tzcMIbn9422uK2uQ0OLue1ebqbljjwX7gO01j2O4/u8mYejllvzXLJpkPrMukjs3TJX0yFom+G5Zn94Woji9V3MNXTcIBXywK1C+fWleI1Aw/Xyv8M1E4Gbdc7FSdPUcfp0Mw+edijiuUFDj8yxP9f2NIlu73KFeE371YoipKIVrjYPk8D97C943nmTGzSY6xrWrbpdDaTfFa69X78kvfPMDowanRcyV18XpcAlWri0ERFEc9jkuto6tniuTr8SV993CgX3iFQkc3V9MphCgRvO58UOeDyQubPuvOC2jXJrH5Z25sdoFJW52nPoIDqSH4u1s95NtvJQ67goAKKwZ3/52NLvRTM/1CIX7nf/uZHOls6m9aGdcdG8Q8L35zhqmqjE31Liai420nxGqqRJ2LY54ZbONGMJhIhr+tdbm1GTxi+JmyjTgEZ7Jhx4zUsb+VWrTJh1Xq5koAipHfT5dZXhBh6+izOuf0jNiRhuVoiLb2Ev8/hJh8vDMPcdBHLLBp4barAzxrK6YO0tXlnFc/tJhQ1Aun6zc3M5lfCdReCG50ZxjaW7vvYsgug3Ndrz+URrGK99cPtqUly7aQ4aechYuN1Ai6LIyW94PiPco0P6h1q2cF2jLtw+rqqqrKpYmqtd3eWVUh18w+O43OUaz7+u5uTxyEpJXr/LpY8VbqpYX9zjYu46l9pL217APqe1LFnMvddBwsy2UplrnPpr5eSvxzG5Uw3zqgQQ10xIpTGTdl2sN9d1NU/kZK7aQJ6j/gh3ZT77r+P94f5w/wl3f93+cH+4X+d+s7r4jfNi1MarmxD0hl8BiNyNIUFjymGZcfFT/t32eM+g4jbbhHXT3EsZ+Polaq95XP4AX95McVhYserllwCmc/e88mZw3Zxk833m09gruPyyzaS2k/kZ9rTNpPYeldyl8m3md+Tab9re/Drv2j49/ALfqUFLgum2PQAAAABJRU5ErkJggg==" alt="Público">
-  <span class="title">{{ trmnl.plugin_settings.instance_name }}</span>
-  <span class="instance">{{ topic_label }}</span>
-</div>
-{%- endcapture %}
+{%- assign topic_label = trmnl.plugin_settings.custom_fields_values.topic | default: "http://feeds.feedburner.com/PublicoRSS" %}
+{%- assign topic_map = "Geral:http://feeds.feedburner.com/PublicoRSS,Ciência:http://feeds.feedburner.com/PublicoCiencias,Cultura:http://feeds.feedburner.com/Publicocultura,Economia:http://feeds.feedburner.com/PublicoEconomia,Local:http://feeds.feedburner.com/PublicoLocal,Media:http://feeds.feedburner.com/Publico-Media,Mundo:http://feeds.feedburner.com/PublicoMundo,P3:http://feeds.feedburner.com/PublicoP3,Sociedade:http://feeds.feedburner.com/PublicoSociedade,Tecnologia:http://feeds.feedburner.com/PublicoTecnologia" | split: "," %}
+{%- for pair in topic_map %}
+  {%- assign parts = pair | split: ":" %}
+  {%- if parts[1] == topic_label %}
+    {%- assign topic_label = parts[0] %}
+  {%- endif %}
+{%- endfor %}
