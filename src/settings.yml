@@ -34,6 +34,8 @@ custom_fields:
 - keyname: about
   field_type: author_bio
   name: Público - Latest News
+  github_url: https://github.com/mcduarte2000/trmnl-publico
+  email_address: home.publicotrmnlplugin@miguelduarte.net
   category: news
   description: Público news feed (Portuguese)
 - keyname: topic
@@ -41,7 +43,16 @@ custom_fields:
   options:
   - Geral: http://feeds.feedburner.com/PublicoRSS
   - Ciência: http://feeds.feedburner.com/PublicoCiencias
+  - Cultura: http://feeds.feedburner.com/Publicocultura
+  - Ecosfera: http://feeds.feedburner.com/PublicoEcosfera
+  - Economia: http://feeds.feedburner.com/PublicoEconomia
+  - Local: http://feeds.feedburner.com/PublicoLocal
+  - Media: http://feeds.feedburner.com/Publico-Media
+  - Mundo: http://feeds.feedburner.com/PublicoMundo
+  - P3: http://feeds.feedburner.com/PublicoP3
+  - Sociedade: http://feeds.feedburner.com/PublicoSociedade
   - Tecnologia: http://feeds.feedburner.com/PublicoTecnologia
+  -
   default: http://feeds.feedburner.com/PublicoRSS
   name: Topic
 name: Público
