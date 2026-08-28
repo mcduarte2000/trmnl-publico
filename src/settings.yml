@@ -52,7 +52,6 @@ custom_fields:
   - P3: http://feeds.feedburner.com/PublicoP3
   - Sociedade: http://feeds.feedburner.com/PublicoSociedade
   - Tecnologia: http://feeds.feedburner.com/PublicoTecnologia
-  -
   default: http://feeds.feedburner.com/PublicoRSS
   name: Topic
 name: Público
