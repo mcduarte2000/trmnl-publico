@@ -23,7 +23,8 @@
           </div>
           <div class="content">
             <span class="title title--small" data-clamp="2">{{ item.title }}</span>
-            <span class="label label--xsmall label--gray">{{ item.category }} · {{ time_ago }}</span>
+            <span class="label label--xsmall label--gray">{{ item.category }}&nbsp;&middot;&nbsp;{{ time_ago }}</span>
+            <span class="description description--xsmall hidden lg:block" data-clamp="2">{{ item.description | strip_html }}</span>
           </div>
         </div>
       {% endfor %}
@@ -31,8 +32,4 @@
   </div>
 </div>
 
-<div class="title_bar">
-  <img class="image" src="https://trmnl.com/images/plugins/trmnl--render.svg">
-  <span class="title">{{ trmnl.plugin_settings.instance_name }}</span>
-  <span class="instance">{{ topic_label }}</span>
-</div>
+{{ title_bar }}
