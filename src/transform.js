@@ -4,7 +4,7 @@ function run(input) {
   const topicMap = {
     "http://feeds.feedburner.com/PublicoRSS": "Geral",
     "http://feeds.feedburner.com/PublicoCiencias": "Ciência",
-    "http://feeds.feedburner.com/Publicocultura": "Cultura",
+    "http://feeds.feedburner.com/PublicoCultura": "Cultura",
     "http://feeds.feedburner.com/PublicoEconomia": "Economia",
     "http://feeds.feedburner.com/PublicoLocal": "Local",
     "http://feeds.feedburner.com/Publico-Media": "Media",
@@ -16,6 +16,6 @@ function run(input) {
   
   return {
     rss: input.rss,
-    topic_label: topicMap[topicUrl] || "Geral"
+    topic_label: topicMap[topicUrl] || "Destaques"
   };
 }
