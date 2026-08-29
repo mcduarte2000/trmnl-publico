@@ -19,9 +19,7 @@
             {% assign time_ago = diff_days | append: "d ago" %}
           {% endif %}
           <div class="item gap--xsmall">
-            <div class="meta">
-              <span class="index text--small">{{ forloop.index }}</span>
-            </div>
+            <div class="meta"></div>
             <div class="content">
               <span class="title title--small" data-clamp="2">{{ item.title }}</span>
               <span class="label label--xsmall label--gray">{{ item.category }}&nbsp;&middot;&nbsp;{{ time_ago }}</span>
