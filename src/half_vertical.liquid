@@ -2,7 +2,7 @@
   {% if rss and rss.channel and rss.channel.item %}
     <div class="columns" data-overflow-max-cols="1">
       <div class="column">
-        {% for item in rss.channel.item limit: 10 %}
+        {% for item in rss.channel.item %}
           {% assign pub_timestamp = item.pubDate | date: "%s" %}
           {% assign now_timestamp = trmnl.system.timestamp_utc %}
           {% assign diff_seconds = now_timestamp | minus: pub_timestamp %}
