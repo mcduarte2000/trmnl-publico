@@ -33,7 +33,7 @@ oauth_fixed_expiry_ms: ''
 custom_fields:
 - keyname: about
   field_type: author_bio
-  name: Público - Latest News
+  name: Público
   github_url: https://github.com/mcduarte2000/trmnl-publico
   email_address: home.publicotrmnlplugin@miguelduarte.net
   category: news
