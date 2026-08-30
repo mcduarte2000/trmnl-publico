@@ -53,6 +53,6 @@ custom_fields:
   - Tecnologia: http://feeds.feedburner.com/PublicoTecnologia
   default: http://feeds.feedburner.com/PublicoRSS
   name: Topic
-name: Público - Tecnologia
+name: Público
 description: Latest news from Público (PT)
 refresh_interval: 30
