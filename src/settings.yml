@@ -37,7 +37,8 @@ custom_fields:
   github_url: https://github.com/mcduarte2000/trmnl-publico
   email_address: home.publicotrmnlplugin@miguelduarte.net
   category: news
-  description: Público news feed (Portuguese)
+  learn_more_url: https://www.publico.pt/
+  description: Latest news in Portuguese from Público, covering Portugal, World, Culture, Science, Technology, Business, and other key topics.
 - keyname: topic
   field_type: select
   options:
