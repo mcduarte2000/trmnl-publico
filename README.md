@@ -5,7 +5,7 @@ A [TRMNL](https://trmnl.com) plugin for ePaper displays, connected by
 
 <img width="150" alt="image" src="https://trmnl.com/images/brand/badges/light/works-with-trmnl/trmnl-badge-works-with-light.svg" />
 
-###About
+### About
 Latest news in Portuguese from [Público](https://www.publico.pt/), covering Portugal, World, Culture, Science, Technology, Business, and other key topics.
 
 ### Develop locally
